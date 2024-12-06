@@ -125,12 +125,6 @@ insert into "COACH_LINK_SKILL" (coach_id, skill_id) values
 -- 3-3 修改：更新教練的經驗年數，資料需求如下：
     -- 1. 教練`肌肉棒子` 的經驗年數為3年
     -- 2. 教練`Q太郎` 的經驗年數為5年
-update "COACH"
-set experience_years = 3
-where user_id = (
-    select id 
-    from "USER" 
-    where email = 'muscle@hexschooltest.io')
 
 update "COACH"
 set experience_years = 5
