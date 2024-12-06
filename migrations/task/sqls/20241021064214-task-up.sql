@@ -27,13 +27,13 @@ VALUES
 -- 1-2 修改：用 Email 找到 李燕容、肌肉棒子、Q太郎，如果他的 Role 為 USER 將他的 Role 改為 COACH
 UPDATE "USER"
 SET role = 'coach'
-WHERE email = 'lee2000@hexschooltest.io',
-OR email = 'muscle@hexschooltest.io',
+WHERE email = 'lee2000@hexschooltest.io'
+OR email = 'muscle@hexschooltest.io'
 OR email = 'starplatinum@hexschooltest.io';
 
 -- 1-3 刪除：刪除USER 資料表中，用 Email 找到透明人，並刪除該筆資料
 delete from  "USER"
-where email = 'opacity0@hexschooltest.io'
+where email = 'opacity0@hexschooltest.io';
 
 -- 1-4 查詢：取得USER 資料表目前所有用戶數量（提示：使用count函式）
 select count(*) from "USER"; 
@@ -130,14 +130,14 @@ set experience_years = 3
 where user_id = (
     select id 
     from "USER" 
-    where email = 'muscle@hexschooltest.io')
+    where email = 'muscle@hexschooltest.io');
 
 update "COACH"
 set experience_years = 5
 where user_id = (
     select id 
     from "USER" 
-    where email = 'starplatinum@hexschooltest.io')
+    where email = 'starplatinum@hexschooltest.io');
 
 -- 3-4 刪除：新增一個專長 空中瑜伽 至 SKILL 資料表，之後刪除此專長。
 insert into "SKILL" (name) values ('空中瑜伽');
