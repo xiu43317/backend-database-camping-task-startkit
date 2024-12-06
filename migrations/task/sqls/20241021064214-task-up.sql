@@ -38,8 +38,7 @@ VALUES
 -- WHERE email = 'starplatinum@hexschooltest.io';
 
 -- 1-3 刪除：刪除USER 資料表中，用 Email 找到透明人，並刪除該筆資料
-DELETE 
-FROM  "USER"
+DELETE FROM "USER"
 WHERE email = 'opacity0@hexschooltest.io'
 
 -- 1-4 查詢：取得USER 資料表目前所有用戶數量（提示：使用count函式）
