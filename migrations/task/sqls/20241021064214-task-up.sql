@@ -25,17 +25,17 @@ VALUES
     ('透明人', 'opacity0@hexschooltest.io','USER')
 
 -- 1-2 修改：用 Email 找到 李燕容、肌肉棒子、Q太郎，如果他的 Role 為 USER 將他的 Role 改為 COACH
-UPDATE "USER"
-SET role = 'COACH'
-WHERE email = 'lee2000@hexschooltest.io'
+-- UPDATE "USER"
+-- SET role = 'COACH'
+-- WHERE email = 'lee2000@hexschooltest.io'
 
-UPDATE "USER"
-SET role = 'COACH'
-WHERE email = 'muscle@hexschooltest.io';
+-- UPDATE "USER"
+-- SET role = 'COACH'
+-- WHERE email = 'muscle@hexschooltest.io';
 
-UPDATE "USER"
-SET role = 'COACH'
-where email = 'starplatinum@hexschooltest.io';
+-- UPDATE "USER"
+-- SET role = 'COACH'
+-- where email = 'starplatinum@hexschooltest.io';
 
 -- 1-3 刪除：刪除USER 資料表中，用 Email 找到透明人，並刪除該筆資料
 delete from  "USER"
@@ -131,19 +131,19 @@ insert into "COACH_LINK_SKILL" (coach_id, skill_id) values
 -- 3-3 修改：更新教練的經驗年數，資料需求如下：
     -- 1. 教練`肌肉棒子` 的經驗年數為3年
     -- 2. 教練`Q太郎` 的經驗年數為5年
-update "COACH"
-set experience_years = 3
-where user_id = (
-    select id 
-    from "USER" 
-    where email = 'muscle@hexschooltest.io');
+-- update "COACH"
+-- set experience_years = 3
+-- where user_id = (
+--     select id 
+--     from "USER" 
+--     where email = 'muscle@hexschooltest.io');
 
-update "COACH"
-set experience_years = 5
-where user_id = (
-    select id 
-    from "USER" 
-    where email = 'starplatinum@hexschooltest.io');
+-- update "COACH"
+-- set experience_years = 5
+-- where user_id = (
+--     select id 
+--     from "USER" 
+--     where email = 'starplatinum@hexschooltest.io');
 
 -- 3-4 刪除：新增一個專長 空中瑜伽 至 SKILL 資料表，之後刪除此專長。
 insert into "SKILL" (name) values ('空中瑜伽');
