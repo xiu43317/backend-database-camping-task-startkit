@@ -25,17 +25,17 @@ VALUES
     ('透明人', 'opacity0@hexschooltest.io','USER');
 
 -- 1-2 修改：用 Email 找到 李燕容、肌肉棒子、Q太郎，如果他的 Role 為 USER 將他的 Role 改為 COACH
--- UPDATE "USER"
--- SET role = 'COACH'
--- WHERE email = 'lee2000@hexschooltest.io';
+UPDATE "USER"
+SET role = 'COACH'
+WHERE email = 'lee2000@hexschooltest.io';
 
--- UPDATE "USER"
--- SET role = 'COACH'
--- WHERE email = 'muscle@hexschooltest.io';
+UPDATE "USER"
+SET role = 'COACH'
+WHERE email = 'muscle@hexschooltest.io';
 
--- UPDATE "USER"
--- SET role = 'COACH'
--- WHERE email = 'starplatinum@hexschooltest.io';
+UPDATE "USER"
+SET role = 'COACH'
+WHERE email = 'starplatinum@hexschooltest.io';
 
 -- 1-3 刪除：刪除USER 資料表中，用 Email 找到透明人，並刪除該筆資料
 DELETE FROM "USER"
@@ -45,8 +45,8 @@ WHERE email = 'opacity0@hexschooltest.io';
 SELECT count(*) FROM "USER";
 
 -- 1-5 查詢：取得 USER 資料表所有用戶資料，並列出前 3 筆（提示：使用LIMIT語法）
-SELECT * FROM "USER";
-LIMIT 3
+SELECT * FROM "USER"
+LIMIT 3;
 
 
 --  ████████  █████   █    ████  
@@ -127,7 +127,7 @@ INSERT INTO "COACH_LINK_SKILL" (coach_id, skill_id) VALUES
 (
   (SELECT id FROM "COACH" WHERE user_id = (SELECT id FROM "USER" WHERE email = 'starplatinum@hexschooltest.io')),
   (SELECT id FROM "SKILL" WHERE name = '復健訓練')
-)
+);
 -- 3-3 修改：更新教練的經驗年數，資料需求如下：
     -- 1. 教練`肌肉棒子` 的經驗年數為3年
     -- 2. 教練`Q太郎` 的經驗年數為5年
@@ -232,7 +232,7 @@ WHERE user_id = (
 UPDATE "COURSE_BOOKING" set join_at = '2024-11-25 14:01:59', status= '上課中' 
 WHERE user_id = (SELECT id FROM "USER" WHERE email = 'wXlTq@hexschooltest.io') 
 AND course_id = (SELECT id FROM "COURSE" WHERE user_id = (SELECT id FROM "USER" WHERE email = 'lee2000@hexschooltest.io')) 
-AND status = '即將授課'
+AND status = '即將授課';
 
 -- 5-6. 查詢：計算用戶王小明的購買堂數，顯示須包含以下欄位： user_id , total。 (需使用到 SUM 函式與 GROUP BY)
 SELECT 
